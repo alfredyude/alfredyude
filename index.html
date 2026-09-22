@@ -1,0 +1,3014 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alfred Yude — Web Developer and SEO Specialist portfolio.">
+  <title>Alfred Yude — Web Developer & SEO Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+  :root{
+    --bg:#070b13; --bg2:#0b1220; --card:rgba(16,25,40,.72);
+    --text:#f5f7fb; --muted:#9ba8bc; --line:rgba(255,255,255,.10);
+    --blue:#208cff; --blue2:#1268d9; --max:1380px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit}
+  .container{width:min(var(--max),92%);margin:auto}
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(7,11,19,.70);backdrop-filter:blur(18px);
+    border-bottom:1px solid transparent;transition:.25s;
+  }
+  .nav.scrolled{border-color:var(--line)}
+  .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
+  .logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+  }
+
+  .logo img{
+    width:120px;
+    height:auto;
+    display:block;
+    object-fit:contain;
+  } 
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{color:#cbd3e1;font-size:14px;font-weight:600;transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-links a.active{position:relative}
+  .nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:var(--blue)}
+  .talk{background:var(--blue);padding:0 21px;height:54px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:28px;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(32,140,255,.22);white-space:nowrap}
+
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-left:auto;
+  }
+
+  .nav-actions .theme-toggle{
+    width:34px;
+    height:54px;
+    margin:0;
+  }
+
+  .nav-actions .theme-toggle-track{
+    width:34px;
+    height:54px;
+  }
+
+  .nav-actions .theme-thumb{
+    width:26px;
+    height:26px;
+  }
+
+  .nav-actions .talk{
+    height:54px;
+  }
+
+  .menu{display:none;background:none;border:0;color:#fff;font-size:26px}
+
+  .hero{
+    min-height:720px;height:100vh;position:relative;display:flex;align-items:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 82% 44%,rgba(32,140,255,.25),transparent 27%),
+      radial-gradient(circle at 22% 70%,rgba(21,74,150,.13),transparent 34%),
+      linear-gradient(115deg,#070b13 0%,#09111e 62%,#0c2b54 100%);
+  }
+  .hero:before{content:"";position:absolute;width:690px;height:690px;border:1px solid rgba(71,145,255,.14);border-radius:50%;right:-120px;top:50%;transform:translateY(-50%)}
+  .hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.07);border-radius:50%;right:20px;top:50%;transform:translateY(-50%)}
+  .hero-grid{display:grid;grid-template-columns:56% 44%;align-items:center;height:100%;position:relative;z-index:2}
+  .eyebrow{display:flex;align-items:center;gap:13px;color:#c2cad8;font-size:14px;letter-spacing:.18em;margin-bottom:17px}
+  .eyebrow i{width:46px;height:2px;background:var(--blue);display:block}
+  .hero h1{font:700 clamp(55px,7vw,94px)/.92 "Space Grotesk";letter-spacing:-.065em;margin-bottom:20px}
+  .hero h1 span{color:var(--blue)}
+  .hero h2{font-size:28px;line-height:1.2;margin-bottom:17px}
+  .hero-copy{max-width:650px;color:var(--muted);font-size:16px;line-height:1.75}
+  .actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:10px;font-weight:700;font-size:14px;transition:.25s}
+  .btn.primary{background:var(--blue);box-shadow:0 12px 32px rgba(32,140,255,.22)}
+  .btn.secondary{border:1px solid #728198;background:rgba(255,255,255,.02)}
+  .btn:hover{transform:translateY(-3px)}
+
+  .quick{
+    display:flex;
+    gap:0;
+    margin-top:48px;
+  }
+
+  .quick-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:0 28px;
+    border-right:1px solid var(--line);
+  }
+
+  .quick-item:first-child{
+    padding-left:0;
+  }
+
+  .quick-item:last-child{
+    border:0;
+  }
+
+  .quick-item img{
+    width:46px;
+    height:46px;
+    padding:11px;
+    object-fit:contain;
+    flex-shrink:0;
+
+    background:#172235;
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:13px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
+  }
+
+  .quick strong{
+    display:block;
+    font-size:14px;
+    line-height:1.3;
+  }
+
+  .quick small{
+    color:#7f8ba0;
+    font-size:12px;
+    display:block;
+    margin-top:3px;
+  }
+
+
+
+  .visual{height:100%;position:relative;display:flex;align-items:flex-end;justify-content:center}
+  .profile{width:min(570px,48vw);max-height:92vh;object-fit:contain;object-position:bottom;position:relative;bottom:-32px;z-index:2;filter:drop-shadow(0 28px 45px rgba(0,0,0,.45))}
+  .circle{position:absolute;width:510px;height:510px;border-radius:50%;background:linear-gradient(145deg,#1478ed,#0b3569);opacity:.95;right:4%;top:50%;transform:translateY(-40%);z-index:1}
+  .note{position:absolute;right:1%;top:31%;z-index:4;color:#dbe8ff;font-family:cursive;font-size:24px;line-height:1.05;transform:rotate(-8deg)}
+  .note:after{content:"";display:block;width:70px;height:3px;background:var(--blue);transform:rotate(-5deg);margin:9px 0 0 15px}
+  .opportunity{position:absolute;right:-2%;bottom:13%;z-index:5;background:rgba(10,19,32,.82);border:1px solid rgba(108,151,211,.28);backdrop-filter:blur(16px);padding:17px 22px;border-radius:18px;min-width:265px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+  .opportunity b{display:block;font-size:14px;margin-bottom:4px}.opportunity span{font-size:12px;color:var(--muted)}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--blue);margin-right:9px}
+  section{padding:105px 0}
+  .section-head{max-width:680px;margin-bottom:20px}
+  .kicker{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+  .section-head h2{font:700 44px/1.1 "Space Grotesk";letter-spacing:-.04em}
+  .section-head p{color:var(--muted);margin-top:14px}
+  .dark-section{background:#090e17}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;transition:.25s}
+  .card:hover{transform:translateY(-5px);border-color:rgba(32,140,255,.4)}
+  .icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #102744;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #52a6ff;
+  font-size: 24px;
+  margin-bottom: 26px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
+}
+
+.icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+  .card h3{font-size:18px;margin-bottom:9px}.card p{font-size:14px;color:var(--muted)}
+  .projects{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+  .project{min-height:260px;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:linear-gradient(145deg,#101c30,#09101c)}
+  .project:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(32,140,255,.24),transparent 35%)}
+  .project>*{position:relative;z-index:1}.project .tag{font-size:11px;color:#70b4ff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}.project h3{font-size:26px}.project p{color:var(--muted);font-size:13px;max-width:560px}
+  .contact{background:linear-gradient(135deg,#0a1424,#0a1f39);border:1px solid var(--line);border-radius:28px;padding:55px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+  .contact h2{font:700 42px "Space Grotesk";letter-spacing:-.04em}.contact p{color:var(--muted);margin-top:10px;max-width:600px}
+  footer{padding:28px 0;border-top:1px solid var(--line);color:#738097;font-size:12px}
+  .reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+
+/* ================================
+   SERVICES SECTION
+================================ */
+#services{
+  background:#090e17;
+  padding:105px 0;
+}
+
+#services .services-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:30px;
+}
+
+#services .services-header .section-head{
+  margin-bottom:0;
+  max-width:760px;
+}
+
+#services .services-header .section-head p{
+  margin-top:14px;
+}
+
+.services-view-all{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  color:#58a6ff;
+  font-size:14px;
+  font-weight:700;
+  white-space:nowrap;
+  padding-bottom:8px;
+  border-bottom:2px solid #208cff;
+  transition:.22s ease;
+}
+
+.services-view-all:hover{
+  color:#fff;
+  border-color:#fff;
+  transform:translateX(3px);
+}
+
+.services-view-all .service-arrow{
+  font-size:22px;
+  line-height:1;
+}
+
+#services .services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:26px;
+}
+
+#services .service-card{
+  position:relative;
+  min-height:540px;
+  padding:28px 30px 27px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 88% 8%,rgba(32,140,255,.055),transparent 28%),
+    linear-gradient(145deg,rgba(16,25,40,.82),rgba(10,18,30,.82));
+  overflow:hidden;
+  transition:.28s ease;
+}
+
+#services .service-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(32,140,255,.38);
+  box-shadow:0 24px 55px rgba(0,0,0,.28);
+}
+
+#services .service-number{
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:linear-gradient(145deg,#102d50,#10243d);
+  border:1px solid rgba(32,140,255,.16);
+  color:#58a6ff;
+  font:600 23px/1 "Space Grotesk",sans-serif;
+  margin-bottom:24px;
+}
+
+#services .service-icon{
+  position:absolute;
+  top:28px;
+  right:30px;
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(16,39,68,.72);
+  border:1px solid rgba(32,140,255,.16);
+  box-shadow:inset 0 0 22px rgba(32,140,255,.04);
+}
+
+#services .service-icon img{
+  width:20px;
+  height:20px;
+  object-fit:contain;
+  display:block;
+}
+
+#services .service-card h3{
+  font:700 25px/1.2 "Space Grotesk",sans-serif;
+  letter-spacing:-.025em;
+  margin-bottom:11px;
+  padding-right:60px;
+}
+
+#services .service-card > p{
+  color:#9ba8bc;
+  font-size:15px;
+  line-height:1.65;
+  min-height:73px;
+}
+
+#services .service-divider{
+  height:1px;
+  background:rgba(255,255,255,.08);
+  margin:17px 0 11px;
+}
+
+#services .service-list{
+  list-style:none;
+  display:grid;
+  gap:7px;
+}
+
+#services .service-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:#aebbd0;
+  font-size:14px;
+  line-height:1.45;
+}
+
+#services .service-check{
+  width:17px;
+  height:17px;
+  min-width:17px;
+  margin-top:1px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#208cff;
+  color:#06101d;
+  font-size:10px;
+  font-weight:900;
+}
+
+#services .service-learn{
+  position:absolute;
+  left:30px;
+  bottom:27px;
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  color:#58a6ff;
+  font-size:14px;
+  font-weight:700;
+  padding-bottom:8px;
+  border-bottom:2px solid #208cff;
+  transition:.22s ease;
+}
+
+#services .service-learn:hover{
+  color:#fff;
+  border-color:#fff;
+  transform:translateX(3px);
+}
+
+#services .service-learn .service-arrow{
+  font-size:21px;
+  line-height:1;
+}
+
+@media(max-width:1000px){
+  #services .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  #services .service-card{
+    min-height:0;
+    padding-bottom:88px;
+  }
+
+  #services .service-card > p{
+    min-height:0;
+  }
+}
+
+@media(max-width:700px){
+  #services{
+    padding:78px 0;
+  }
+
+  #services .services-header{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  #services .section-head h2{
+    font-size:36px;
+  }
+
+  #services .service-card{
+    padding:24px 22px 82px;
+  }
+
+  #services .service-icon{
+    top:24px;
+    right:22px;
+  }
+
+  #services .service-number{
+    width:58px;
+    height:58px;
+    font-size:25px;
+  }
+
+  #services .service-card h3{
+    font-size:22px;
+  }
+
+  #services .service-list li{
+    font-size:13px;
+  }
+
+  #services .service-learn{
+    left:22px;
+    bottom:23px;
+  }
+}
+
+  @media(max-width:900px){
+    .nav-links,.nav-actions{display:none}.menu{display:block}
+    .nav.open .nav-links{display:flex;position:absolute;left:0;right:0;top:78px;padding:20px;background:rgba(7,11,19,.97);flex-direction:column;gap:20px;border-bottom:1px solid var(--line)}
+    .hero{height:auto;min-height:0;padding-top:115px}.hero-grid{grid-template-columns:1fr}.hero-content{text-align:center;padding-bottom:20px}.eyebrow{justify-content:center}.hero-copy{margin:auto}.actions{justify-content:center}.quick{justify-content:center}.visual{min-height:540px;margin-top:15px}.profile{width:min(560px,92vw);bottom:-18px}.circle{width:420px;height:420px;right:50%;transform:translate(50%,-35%)}.note{right:7%;top:10%}.opportunity{right:50%;transform:translateX(50%);bottom:5%}
+    .cards{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.contact{padding:32px;flex-direction:column;align-items:flex-start}.contact h2{font-size:32px}
+  }
+  @media(max-width:520px){
+    .hero h1{font-size:52px}.hero h2{font-size:22px}.quick{flex-wrap:wrap;gap:15px}.quick-item{padding:0 15px}.quick-item:first-child{padding-left:0}.quick-item:last-child{border-right:1px solid var(--line)}
+    .visual{min-height:450px}.profile{width:105%}.circle{width:340px;height:340px}.note{font-size:18px}.opportunity{min-width:230px;padding:13px 16px}
+    section{padding:78px 0}.section-head h2{font-size:36px}
+  }
+
+  .btn-icon{
+    width:24px;
+    height:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    background:transparent !important;
+    border:0 !important;
+    padding:0;
+  }
+
+  .btn-icon img{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+    display:block;
+  }
+
+  .social-links{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-top:28px;
+  }
+
+  .social-links a{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#172235;
+    border:1px solid rgba(255,255,255,.06);
+    transition:.25s ease;
+  }
+
+  .social-links a:hover{
+    background:#208cff;
+    transform:translateY(-3px);
+  }
+
+  .social-links img{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    display:block;
+  }
+
+  .talk{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.talk img{
+  width:10px;
+  height:10px;
+  object-fit:contain;
+  display:block;
+}
+
+.button-arrow{
+  width:15px;
+  height:15px;
+  object-fit:contain;
+  display:block;
+}
+
+.laptop-container{
+  width:100%;
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:1400px;
+  position:relative;
+  padding:50px;
+}
+
+.laptop{
+  width:620px;
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotateX(0deg) rotateY(0deg);
+  transition:transform .12s ease-out;
+  will-change:transform;
+}
+
+/* SCREEN */
+
+.laptop-screen{
+  width:100%;
+  aspect-ratio:16 / 10;
+  background:#080c14;
+  border-radius:18px 18px 8px 8px;
+  padding:12px;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+  transform-origin:bottom center;
+  position:relative;
+  z-index:3;
+}
+
+.screen-bezel{
+  width:100%;
+  height:100%;
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(32,140,255,.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #070b13,
+      #0b1728
+    );
+}
+
+.camera{
+  position:absolute;
+  top:5px;
+  left:50%;
+  transform:translateX(-50%);
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#05070b;
+  border:1px solid #303847;
+  z-index:5;
+}
+
+/* SCREEN CONTENT */
+
+.screen-content{
+  padding:28px;
+  height:100%;
+}
+
+.screen-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:#b5c0d0;
+}
+
+.screen-nav strong{
+  color:white;
+  font-size:16px;
+}
+
+.screen-nav strong span{
+  color:#208cff;
+}
+
+.screen-nav div{
+  display:flex;
+  gap:16px;
+}
+
+.screen-hero{
+  height:calc(100% - 30px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.screen-hero small{
+  color:#208cff;
+  font-size:8px;
+  letter-spacing:.18em;
+}
+
+.screen-hero h3{
+  margin:7px 0;
+  color:white;
+  font:700 36px "Space Grotesk",sans-serif;
+  letter-spacing:-.06em;
+}
+
+.screen-hero h3 span{
+  color:#208cff;
+}
+
+.screen-hero p{
+  color:#9ba8bc;
+  font-size:10px;
+  margin-bottom:14px;
+}
+
+.screen-button{
+  display:inline-block;
+  background:#208cff;
+  color:white;
+  padding:7px 12px;
+  border-radius:5px;
+  font-size:8px;
+  font-weight:700;
+}
+
+.screen-avatar{
+  width:175px;
+  height:210px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.screen-avatar img{
+  width:190px;
+  max-width:none;
+  filter:drop-shadow(0 10px 15px rgba(0,0,0,.4));
+}
+
+/* LAPTOP BASE */
+
+.laptop-base{
+  width:110%;
+  height:35px;
+  position:relative;
+  left:-5%;
+  margin-top:-2px;
+  background:linear-gradient(
+    180deg,
+    #3a414c,
+    #171c24
+  );
+  border-radius:4px 4px 16px 16px;
+  box-shadow:
+    0 18px 25px rgba(0,0,0,.35),
+    inset 0 1px rgba(255,255,255,.25);
+  transform:rotateX(-4deg);
+  z-index:4;
+}
+
+/* KEYBOARD */
+
+.keyboard{
+  width:88%;
+  height:22px;
+  margin:auto;
+  padding-top:5px;
+  position:relative;
+}
+
+.keyboard-row{
+  display:flex;
+  justify-content:center;
+  gap:3px;
+  margin-bottom:3px;
+}
+
+.keyboard-row i{
+  width:24px;
+  height:4px;
+  display:block;
+  border-radius:1px;
+  background:#10151c;
+  box-shadow:inset 0 1px rgba(255,255,255,.08);
+}
+
+.trackpad{
+  position:absolute;
+  width:90px;
+  height:14px;
+  bottom:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:2px;
+  background:#242b34;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* SHADOW */
+
+.laptop-shadow{
+  position:absolute;
+  width:500px;
+  height:50px;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.45);
+  filter:blur(25px);
+  border-radius:50%;
+  z-index:-1;
+}
+
+/* ================================
+   VS CODE LAPTOP SCREEN
+================================ */
+
+.code-window{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  background:#0d1117;
+  color:#c9d1d9;
+  font-family:Consolas,"Courier New",monospace;
+}
+
+/* TOP BAR */
+
+.code-topbar{
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  background:#161b22;
+  border-bottom:1px solid #252b33;
+  flex-shrink:0;
+}
+
+.window-buttons{
+  position:absolute;
+  left:12px;
+  display:flex;
+  gap:6px;
+}
+
+.window-buttons span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#59636f;
+}
+
+.code-title{
+  font-size:8px;
+  color:#8b949e;
+}
+
+/* EDITOR AREA */
+
+.code-body{
+  flex:1;
+  display:flex;
+  min-height:0;
+}
+
+/* SIDEBAR */
+
+.code-sidebar{
+  width:34px;
+  background:#11161d;
+  border-right:1px solid #252b33;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:10px;
+  gap:15px;
+  color:#687386;
+  font-size:10px;
+}
+
+/* EDITOR */
+
+.code-editor{
+  flex:1;
+  min-width:0;
+  position:relative;
+  overflow:hidden;
+  background:#0d1117;
+}
+
+/* TAB */
+
+.code-tabs{
+  height:28px;
+  display:flex;
+  align-items:center;
+  background:#161b22;
+  border-bottom:1px solid #252b33;
+}
+
+.active-tab{
+  height:100%;
+  display:flex;
+  align-items:center;
+  padding:0 12px;
+  font-size:8px;
+  color:#e6edf3;
+  background:#0d1117;
+  border-top:1px solid #208cff;
+}
+
+/* CODE */
+
+.code-lines{
+  padding:12px 12px 12px 10px;
+  font-size:8px;
+  line-height:1.8;
+  white-space:pre;
+  overflow:hidden;
+  height:calc(100% - 28px);
+}
+
+.code-line{
+  display:block;
+}
+
+.line-number{
+  display:inline-block;
+  width:24px;
+  color:#484f58;
+  user-select:none;
+}
+
+.code-keyword{
+  color:#ff7b72;
+}
+
+.code-function{
+  color:#d2a8ff;
+}
+
+.code-string{
+  color:#a5d6ff;
+}
+
+.code-variable{
+  color:#79c0ff;
+}
+
+.code-property{
+  color:#ffa657;
+}
+
+.code-comment{
+  color:#8b949e;
+}
+
+/* CURSOR */
+
+.code-cursor{
+  position:absolute;
+  width:1px;
+  height:10px;
+  background:#58a6ff;
+  left:90px;
+  top:43px;
+  animation:codeBlink .8s infinite;
+}
+
+@keyframes codeBlink{
+  0%,45%{
+    opacity:1;
+  }
+
+  46%,100%{
+    opacity:0;
+  }
+}
+
+/* STATUS BAR */
+
+.code-statusbar{
+  height:20px;
+  background:#1268d9;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px;
+  font-size:7px;
+  flex-shrink:0;
+}
+
+/* ================================
+   ABOUT LAPTOP + CONTENT LAYOUT
+================================ */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.05fr 0.95fr;
+  align-items:center;
+  gap:60px;
+  margin-bottom:70px;
+}
+
+.about-laptop{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.about-content{
+  width:100%;
+}
+
+.about-content .section-head{
+  max-width:100%;
+  margin-bottom:0;
+}
+
+.about-content .section-head h2{
+  font-size:50px;
+  line-height:1.08;
+}
+
+.about-content .section-head p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.8;
+  margin-top:20px;
+}
+
+.about-cards{
+  margin-top:20px;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #172235;
+  border: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: .25s ease;
+  cursor: pointer;
+}
+
+.skill-icon img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  display: block;
+}
+
+.skill-icon:hover {
+  transform: translateY(-5px);
+  background: #102d50;
+  border-color: rgba(32,140,255,.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.skill-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+
+  background: #111b2b;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+
+  white-space: nowrap;
+  padding: 8px 10px;
+  border-radius: 7px;
+
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: .2s ease;
+  z-index: 999;
+}
+
+.skill-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+  
+/* ================================
+   PROJECT SHOWCASE
+================================ */
+.project-showcase{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:34px;
+}
+.project-card{
+  min-width:0;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#0d1b30,#09111d);
+  transition:.28s ease;
+  position:relative;
+}
+.project-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(32,140,255,.45);
+  box-shadow:0 22px 55px rgba(0,0,0,.28);
+}
+.project-image{
+  position:relative;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#0b1220;
+}
+.project-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .5s ease;
+}
+.project-card:hover .project-image img{
+  transform:scale(1.035);
+}
+.project-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(4,9,17,.02) 45%,rgba(4,9,17,.38) 100%);
+  pointer-events:none;
+}
+.project-body{
+  padding:24px;
+}
+.project-tag{
+  color:#58a6ff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+.project-body h3{
+  font:700 24px/1.15 "Space Grotesk",sans-serif;
+  letter-spacing:-.03em;
+  margin-bottom:9px;
+}
+.project-body p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  max-width:650px;
+}
+.project-tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:17px;
+}
+.project-tech span{
+  padding:6px 10px;
+  border-radius:999px;
+  background:#14243a;
+  border:1px solid rgba(255,255,255,.06);
+  color:#cbd7e8;
+  font-size:11px;
+  font-weight:600;
+}
+.project-actions{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+.project-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:11px 16px;
+  border:1px solid rgba(32,140,255,.75);
+  border-radius:10px;
+  color:#fff;
+  background:rgba(8,18,32,.55);
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.22s ease;
+}
+.project-btn:hover{
+  background:var(--blue);
+  transform:translateY(-2px);
+}
+.project-btn.secondary{
+  border-color:var(--line);
+  color:#b9c5d7;
+}
+.project-btn.secondary:hover{
+  border-color:rgba(255,255,255,.22);
+  background:#142033;
+  color:#fff;
+}
+.project-more{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100%;
+  background:
+    radial-gradient(circle at 70% 25%,rgba(32,140,255,.16),transparent 34%),
+    linear-gradient(145deg,#0d1b30,#09111d);
+}
+.project-more .project-more-inner{
+  padding:42px;
+  text-align:center;
+}
+.project-more-icon{
+  width:64px;
+  height:64px;
+  margin:0 auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(111,163,230,.25);
+  border-radius:16px;
+  color:#8bb7ee;
+  font-size:30px;
+  background:#10213a;
+}
+.project-more h3{
+  font:700 22px "Space Grotesk",sans-serif;
+  margin-bottom:8px;
+}
+.project-more p{
+  color:var(--muted);
+  font-size:13px;
+  max-width:360px;
+  margin:auto;
+}
+
+/* Project detail modal */
+.project-modal{
+  position:fixed;
+  inset:0;
+  z-index:300;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(2,6,12,.88);
+  backdrop-filter:blur(12px);
+}
+.project-modal.open{display:flex}
+.project-modal-box{
+  width:min(1180px,96vw);
+  max-height:94vh;
+  overflow:auto;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  background:linear-gradient(145deg,#0e1828,#080f1b);
+  box-shadow:0 35px 100px rgba(0,0,0,.55);
+  position:relative;
+}
+.project-modal-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  background:rgba(10,18,30,.86);
+  color:#fff;
+  font-size:25px;
+  line-height:1;
+  cursor:pointer;
+  z-index:10;
+  transition:.2s ease;
+}
+.project-modal-close:hover{background:var(--blue);transform:rotate(90deg)}
+.exoben-modal-content{padding:34px}
+.exoben-modal-header{max-width:850px;padding-right:55px;margin-bottom:24px}
+.exoben-modal-tag{
+  color:#58a6ff;font-size:11px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:8px
+}
+.exoben-modal-header h2{
+  font:700 clamp(30px,4vw,46px)/1.08 "Space Grotesk",sans-serif;
+  letter-spacing:-.045em;margin-bottom:12px
+}
+.exoben-modal-header p{color:var(--muted);font-size:14px;line-height:1.75}
+.exoben-details{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-bottom:28px
+}
+.exoben-panel{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;background:rgba(255,255,255,.025);padding:22px
+}
+.exoben-panel h3{font-size:17px;margin-bottom:14px}
+.exoben-features{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;
+  list-style:none
+}
+.exoben-features li{
+  display:flex;gap:9px;align-items:flex-start;color:#b5c2d5;font-size:13px;line-height:1.5
+}
+.exoben-check{
+  width:17px;height:17px;min-width:17px;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;
+  background:#208cff;color:#06101d;font-size:10px;font-weight:900
+}
+.exoben-stack{display:flex;flex-wrap:wrap;gap:8px}
+.exoben-stack span{
+  padding:7px 10px;border-radius:999px;background:#14243a;
+  border:1px solid rgba(255,255,255,.07);color:#d1dceb;font-size:11px;font-weight:600
+}
+.exoben-gallery{border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
+.exoben-main-image{
+  width:100%;height:min(52vh,540px);object-fit:contain;object-position:center;
+  display:block;border-radius:14px;background:#050a12;
+  border:1px solid rgba(255,255,255,.08)
+}
+.exoben-gallery-controls{
+  display:flex;align-items:center;gap:10px;margin-top:12px
+}
+.exoben-gallery-arrow{
+  width:38px;height:38px;min-width:38px;border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;background:#101c2d;color:#fff;cursor:pointer;font-size:18px;
+  transition:.2s ease
+}
+.exoben-gallery-arrow:hover{background:var(--blue);border-color:var(--blue)}
+.exoben-thumbs{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:2px 1px 7px;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+.exoben-thumbs::-webkit-scrollbar{
+  display:none;
+  width:0;
+  height:0;
+}
+.exoben-thumb{
+  width:105px;height:65px;min-width:105px;padding:0;border:1px solid rgba(255,255,255,.10);
+  border-radius:9px;overflow:hidden;background:#0b1422;cursor:pointer;opacity:.65;
+  transition:.2s ease
+}
+.exoben-thumb img{width:100%;height:100%;display:block;object-fit:cover}
+.exoben-thumb:hover{opacity:1;border-color:rgba(32,140,255,.65)}
+.exoben-thumb.active{opacity:1;border:2px solid var(--blue);box-shadow:0 0 0 2px rgba(32,140,255,.14)}
+.exoben-gallery-note{color:#74839a;font-size:11px;margin-top:8px}
+@media(max-width:800px){
+  .project-modal{padding:12px}
+  .exoben-modal-content{padding:24px 18px}
+  .exoben-modal-header{padding-right:35px}
+  .exoben-details{grid-template-columns:1fr}
+  .exoben-features{grid-template-columns:1fr}
+  .exoben-main-image{height:42vh}
+  .exoben-thumb{width:82px;height:54px;min-width:82px}
+}
+@media(max-width:1100px){
+  .project-showcase{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-body{padding:21px}
+}
+@media(max-width:700px){
+  .project-showcase{grid-template-columns:1fr}
+  .project-body h3{font-size:21px}
+  .project-actions{flex-direction:column}
+  .project-btn{width:100%}
+  .project-modal{padding:14px}
+}
+
+.project-btn img{
+  width:13px;
+  height:13px;
+  object-fit:contain;
+  display:block;
+}
+
+  
+/* ================================
+   DAY / NIGHT THEME TOGGLE
+   Vertical switch
+================================ */
+.theme-toggle{
+  width:34px;
+  height:54px;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.theme-toggle-track{
+  position:relative;
+  width:34px;
+  height:54px;
+  display:block;
+  border-radius:999px;
+  background:linear-gradient(180deg,#111c2d,#0a1220);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,.28),
+    0 6px 18px rgba(0,0,0,.16);
+  overflow:hidden;
+  transition:
+    background .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease,
+    transform .2s ease;
+}
+
+/* Night stars */
+.theme-toggle-track::before{
+  content:"";
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  right:6px;
+  top:9px;
+  background:rgba(255,255,255,.70);
+  box-shadow:
+    -9px 13px 0 -2px rgba(255,255,255,.42),
+    3px 26px 0 -2px rgba(255,255,255,.30);
+  opacity:.72;
+  transition:opacity .45s ease,transform .45s ease;
+}
+
+.theme-toggle-track::after{
+  content:"";
+  position:absolute;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  left:6px;
+  top:27px;
+  background:#fff;
+  box-shadow:
+    9px 13px 0 rgba(255,255,255,.65),
+    16px -8px 0 rgba(255,255,255,.45);
+  opacity:.40;
+  transition:opacity .45s ease;
+}
+
+/* Circular thumb */
+.theme-thumb{
+  position:absolute;
+  left:3px;
+  top:3px;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:#17253a;
+  box-shadow:0 4px 12px rgba(0,0,0,.30);
+  transition:
+    transform .55s cubic-bezier(.22,1,.36,1),
+    background .45s ease,
+    box-shadow .45s ease;
+  z-index:3;
+}
+
+/* Icon is INSIDE the circular thumb */
+.theme-icon{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:1;
+  transition:
+    opacity .3s ease,
+    transform .55s cubic-bezier(.22,1,.36,1);
+}
+
+.theme-icon img{
+  width:15px !important;
+  height:15px !important;
+  max-width:15px !important;
+  max-height:15px !important;
+  min-width:15px;
+  min-height:15px;
+  margin:0;
+  padding:0;
+  display:block;
+  object-fit:contain;
+  object-position:center;
+}
+
+.theme-icon.sun{
+  opacity:0;
+  transform:rotate(-80deg) scale(.65);
+}
+
+.theme-icon.moon{
+  opacity:1;
+  transform:rotate(0deg) scale(1);
+}
+
+.theme-toggle:hover .theme-toggle-track{
+  border-color:rgba(32,140,255,.55);
+  transform:translateY(-1px);
+}
+
+/* DAY MODE */
+body.light .theme-toggle-track,
+html.light-mode body .theme-toggle-track{
+  background:linear-gradient(180deg,#b9ddff,#dff1ff);
+  border-color:rgba(24,102,180,.18);
+  box-shadow:
+    inset 0 2px 5px rgba(24,72,120,.12),
+    0 6px 18px rgba(39,91,145,.16);
+}
+
+body.light .theme-toggle-track::before,
+html.light-mode body .theme-toggle-track::before{
+  opacity:0;
+  transform:translateY(-8px);
+}
+
+body.light .theme-toggle-track::after,
+html.light-mode body .theme-toggle-track::after{
+  opacity:0;
+}
+
+body.light .theme-thumb,
+html.light-mode body .theme-thumb{
+  transform:translateY(24px);
+  background:#fff;
+  box-shadow:0 4px 14px rgba(33,91,145,.25);
+}
+
+body.light .theme-icon.moon,
+html.light-mode body .theme-icon.moon{
+  opacity:0;
+  transform:rotate(80deg) scale(.65);
+}
+
+body.light .theme-icon.sun,
+html.light-mode body .theme-icon.sun{
+  opacity:1;
+  transform:rotate(0deg) scale(1);
+}
+
+/* Smooth color transitions */
+body,
+.nav,
+.dark-section,
+.card,
+.project-card,
+.project-more,
+.contact,
+footer,
+#services,
+#services .service-card,
+.project-modal,
+.project-modal-box,
+.exoben-panel,
+.exoben-gallery-arrow,
+.exoben-thumb,
+.btn.secondary,
+.project-btn.secondary,
+.social-links a,
+.skill-icon,
+.quick-item img,
+.opportunity{
+  transition:
+    background-color .45s ease,
+    background .45s ease,
+    border-color .45s ease,
+    color .45s ease,
+    box-shadow .45s ease;
+}
+
+/* LIGHT / DAY MODE */
+body.light,
+html.light-mode body{
+  --bg:#f4f7fb;
+  --bg2:#edf3f9;
+  --card:rgba(255,255,255,.88);
+  --text:#101827;
+  --muted:#5e6b7e;
+  --line:rgba(15,31,51,.12);
+  background:#f4f7fb;
+  color:#101827;
+}
+body.light .nav,
+html.light-mode body .nav{
+  background:rgba(247,250,253,.78);
+  border-color:rgba(15,31,51,.10);
+}
+body.light .nav-links a,
+html.light-mode body .nav-links a{color:#536176}
+body.light .nav-links a:hover,
+body.light .nav-links a.active,
+html.light-mode body .nav-links a:hover,
+html.light-mode body .nav-links a.active{color:#101827}
+body.light .menu,
+html.light-mode body .menu{color:#101827}
+body.light .hero,
+html.light-mode body .hero{
+  background:
+    radial-gradient(circle at 82% 44%,rgba(32,140,255,.16),transparent 27%),
+    radial-gradient(circle at 22% 70%,rgba(68,133,207,.10),transparent 34%),
+    linear-gradient(115deg,#f7faff 0%,#eef5fc 62%,#dcecff 100%);
+}
+body.light .hero:before,
+html.light-mode body .hero:before{border-color:rgba(32,140,255,.15)}
+body.light .hero:after,
+html.light-mode body .hero:after{border-color:rgba(20,54,90,.08)}
+body.light .eyebrow,
+html.light-mode body .eyebrow{color:#52647b}
+body.light .hero-copy,
+html.light-mode body .hero-copy{color:#5e6b7e}
+body.light .btn.secondary,
+html.light-mode body .btn.secondary{
+  border-color:#9aaabd;
+  background:rgba(255,255,255,.55);
+  color:#172338;
+}
+body.light .quick-item img,
+html.light-mode body .quick-item img{
+  background:#e7f0fa;
+  border-color:rgba(20,80,135,.10);
+}
+body.light .quick small,
+html.light-mode body .quick small{color:#718096}
+body.light .circle,
+html.light-mode body .circle{
+  background:linear-gradient(145deg,#65b2ff,#1767b8);
+}
+body.light .note,
+html.light-mode body .note{color:#315b89}
+body.light .opportunity,
+html.light-mode body .opportunity{
+  background:rgba(255,255,255,.82);
+  border-color:rgba(43,101,157,.18);
+  box-shadow:0 20px 50px rgba(38,82,126,.16);
+}
+body.light .dark-section,
+html.light-mode body .dark-section,
+body.light #services,
+html.light-mode body #services{
+  background:#eef3f8;
+}
+body.light .card,
+html.light-mode body .card{
+  background:rgba(255,255,255,.88);
+  border-color:rgba(15,31,51,.10);
+  box-shadow:0 12px 35px rgba(36,65,94,.06);
+}
+body.light .card p,
+html.light-mode body .card p{color:#617086}
+body.light .icon,
+html.light-mode body .icon{
+  background:#e7f1fb;
+  border-color:rgba(32,140,255,.12);
+}
+body.light .skill-icon,
+html.light-mode body .skill-icon{
+  background:#edf4fb;
+  border-color:rgba(15,31,51,.10);
+}
+body.light .skill-icon:hover,
+html.light-mode body .skill-icon:hover{background:#dceeff}
+body.light .skill-icon::after,
+html.light-mode body .skill-icon::after{
+  background:#fff;
+  color:#172338;
+  border-color:rgba(15,31,51,.12);
+  box-shadow:0 8px 20px rgba(26,56,88,.16);
+}
+body.light #services .service-card,
+html.light-mode body #services .service-card{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(32,140,255,.08),transparent 28%),
+    linear-gradient(145deg,rgba(255,255,255,.96),rgba(239,245,251,.96));
+  border-color:rgba(15,31,51,.10);
+  box-shadow:0 12px 35px rgba(36,65,94,.06);
+}
+body.light #services .service-card > p,
+html.light-mode body #services .service-card > p{color:#637187}
+body.light #services .service-list li,
+html.light-mode body #services .service-list li{color:#56657a}
+body.light #services .service-number,
+html.light-mode body #services .service-number{
+  background:linear-gradient(145deg,#e2f0ff,#edf6ff);
+  border-color:rgba(32,140,255,.18);
+}
+body.light #services .service-icon,
+html.light-mode body #services .service-icon{
+  background:#e6f1fc;
+  border-color:rgba(32,140,255,.14);
+}
+body.light .project-card,
+html.light-mode body .project-card{
+  background:linear-gradient(145deg,#ffffff,#edf3f9);
+  border-color:rgba(15,31,51,.10);
+  box-shadow:0 12px 35px rgba(36,65,94,.06);
+}
+body.light .project-image,
+html.light-mode body .project-image{background:#e8eff6}
+body.light .project-image:after,
+html.light-mode body .project-image:after{
+  background:linear-gradient(180deg,rgba(255,255,255,.02) 45%,rgba(16,36,60,.18) 100%);
+}
+body.light .project-body p,
+html.light-mode body .project-body p{color:#627086}
+body.light .project-tech span,
+html.light-mode body .project-tech span{
+  background:#e8f1fa;
+  color:#4e6077;
+  border-color:rgba(15,31,51,.08);
+}
+body.light .project-btn,
+html.light-mode body .project-btn{
+  color:#12304d;
+  background:rgba(255,255,255,.72);
+}
+body.light .project-btn.secondary,
+html.light-mode body .project-btn.secondary{
+  color:#5b6b80;
+  border-color:rgba(15,31,51,.12);
+  background:#fff;
+}
+body.light .project-btn.secondary:hover,
+html.light-mode body .project-btn.secondary:hover{
+  background:#eaf2fa;
+  color:#172338;
+}
+body.light .project-more,
+html.light-mode body .project-more{
+  background:
+    radial-gradient(circle at 70% 25%,rgba(32,140,255,.10),transparent 34%),
+    linear-gradient(145deg,#fff,#edf4fa);
+}
+body.light .project-more-icon,
+html.light-mode body .project-more-icon{
+  background:#e5f0fb;
+  color:#347bb9;
+  border-color:rgba(32,140,255,.18);
+}
+body.light .project-more p,
+html.light-mode body .project-more p{color:#647287}
+body.light .contact,
+html.light-mode body .contact{
+  background:linear-gradient(135deg,#edf6ff,#dfefff);
+  border-color:rgba(15,31,51,.10);
+  box-shadow:0 15px 40px rgba(35,79,122,.08);
+}
+body.light footer,
+html.light-mode body footer{color:#718096}
+body.light .social-links a,
+html.light-mode body .social-links a{
+  background:#e8f1fa;
+  border-color:rgba(15,31,51,.09);
+}
+body.light .social-links a:hover,
+html.light-mode body .social-links a:hover{background:#208cff}
+body.light .project-modal,
+html.light-mode body .project-modal{
+  background:rgba(228,236,245,.82);
+}
+body.light .project-modal-box,
+html.light-mode body .project-modal-box{
+  background:linear-gradient(145deg,#ffffff,#edf3f9);
+  border-color:rgba(15,31,51,.12);
+  box-shadow:0 35px 100px rgba(30,55,82,.25);
+}
+body.light .project-modal-close,
+html.light-mode body .project-modal-close{
+  background:rgba(245,249,253,.92);
+  color:#172338;
+  border-color:rgba(15,31,51,.12);
+}
+body.light .exoben-modal-header p,
+html.light-mode body .exoben-modal-header p,
+body.light .exoben-features li,
+html.light-mode body .exoben-features li{color:#5d6d82}
+body.light .exoben-panel,
+html.light-mode body .exoben-panel{
+  background:rgba(255,255,255,.68);
+  border-color:rgba(15,31,51,.10);
+}
+body.light .exoben-stack span,
+html.light-mode body .exoben-stack span{
+  background:#e8f1fa;
+  color:#4f6178;
+  border-color:rgba(15,31,51,.08);
+}
+body.light .exoben-main-image,
+html.light-mode body .exoben-main-image{background:#e7eef6}
+body.light .exoben-gallery-arrow,
+html.light-mode body .exoben-gallery-arrow{
+  background:#e8f1fa;
+  color:#17304b;
+  border-color:rgba(15,31,51,.10);
+}
+body.light .exoben-thumb,
+html.light-mode body .exoben-thumb{background:#e8f0f7;border-color:rgba(15,31,51,.10)}
+body.light .exoben-gallery-note,
+html.light-mode body .exoben-gallery-note{color:#748297}
+body.light .nav.open .nav-links,
+html.light-mode body .nav.open .nav-links{
+  background:rgba(247,250,253,.98);
+  border-color:rgba(15,31,51,.10);
+}
+
+/* Keep the code/laptop mockup dark for contrast in day mode. */
+body.light .laptop-screen,
+html.light-mode body .laptop-screen{
+  box-shadow:0 30px 60px rgba(35,63,90,.18),inset 0 0 0 1px rgba(255,255,255,.28);
+}
+
+/* Full-screen day/night wipe */
+.theme-wipe{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  pointer-events:none;
+  clip-path:circle(0 at 50% 50%);
+  transition:clip-path .38s cubic-bezier(.76,0,.24,1);
+}
+.theme-wipe.expand{clip-path:circle(var(--wipe-radius) at var(--wipe-x) var(--wipe-y))}
+.theme-wipe.shrink{clip-path:circle(0 at var(--wipe-x) var(--wipe-y))}
+
+</style>
+  <script>
+try{
+  if(localStorage.getItem("portfolio-theme")==="light"){
+    document.documentElement.classList.add("light-mode");
+  }
+}catch(e){}
+</script>
+</head>
+  <body>
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+    <a class="logo" href="#home">
+    <img src="img/peng-logo-1.png" alt="Peng.">
+  </a>
+      <nav class="nav-links">
+        <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+        <a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+      
+        <a class="talk" href="https://wa.me/639123928187" target="_blank">
+          <span>Let's Talk</span>
+          <img src="img/top-right.png" alt="">
+        </a>
+
+          <button class="theme-toggle" id="themeToggle" type="button"
+          aria-label="Switch to light mode" aria-pressed="false">
+          <span class="theme-toggle-track">
+            <span class="theme-thumb">
+              <span class="theme-icon moon">
+                <img src="img/moon.png" alt="Night mode">
+              </span>
+              <span class="theme-icon sun">
+                <img src="img/sun.png" alt="Day mode">
+              </span>
+            </span>
+          </span>
+        </button>
+
+      </div>
+      <button class="menu" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="eyebrow"><i></i> HELLO, I'M</div>
+        <h1>Alfred <span>Yude.</span></h1>
+        <h2>Web Developer &amp; SEO Specialist</h2>
+        <p class="hero-copy">I build modern, responsive websites and help businesses grow online through effective SEO strategies. Passionate about turning ideas into real digital solutions.</p>
+      <div class="actions">
+
+    <a class="btn primary" href="#projects">
+      <span class="btn-icon">
+        <img src="img/case.png" alt="">
+      </span>
+      <span>View My Work</span>
+     <img class="button-arrow" src="img/arrow-right.png" alt="">
+    </a>
+
+    <a class="btn secondary" href="#contact">
+      <span class="btn-icon">
+        <img src="img/send.png" alt="">
+      </span>
+      <span>Let's Connect</span>
+    </a>
+
+  </div>
+        <div class="quick">
+
+    <div class="quick-item">
+      <img src="img/code.png" alt="Web Development">
+      <div>
+        <strong>Web Development</strong>
+        <small>Modern &amp; Responsive</small>
+      </div>
+    </div>
+
+    <div class="quick-item">
+      <img src="img/seo.png" alt="SEO Specialist">
+      <div>
+        <strong>SEO Specialist</strong>
+        <small>Data-Driven Results</small>
+      </div>
+    </div>
+
+    <div class="quick-item">
+      <img src="img/graduate.png" alt="IT Graduate">
+      <div>
+        <strong>IT Graduate</strong>
+        <small>BS Information Technology</small>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="social-links">
+
+    <a href="https://facebook.com/yourusername" target="_blank">
+      <img src="img/facebook.png" alt="Facebook">
+    </a>
+
+    <a href="https://instagram.com/yourusername" target="_blank">
+      <img src="img/instagram.png" alt="Instagram">
+    </a>
+
+    <a href="https://www.upwork.com/freelancers/yourusername" target="_blank">
+      <img src="img/upwork.png" alt="Upwork">
+    </a>
+
+    <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+      <img src="img/linkedin.png" alt="LinkedIn">
+    </a>
+
+    <a href="https://github.com/yourusername" target="_blank">
+      <img src="img/github.png" alt="GitHub">
+    </a>
+
+  </div>
+      </div>
+      <div class="visual reveal">
+        <div class="circle"></div>
+        <div class="note">Always<br>Keep<br>Growing</div>
+        <img class="profile" src="img/alfred-profile.png" alt="Alfred Yude wearing a formal suit">
+        <div class="opportunity"><b><span class="dot"></span>Open to new opportunities</b><span>Let's create something amazing together!</span></div>
+      </div>
+    </div>
+  </section>
+
+<section id="about">
+  <div class="container">
+
+    <div class="about-grid">
+
+      <!-- LEFT: ANIMATED LAPTOP -->
+      <div class="about-laptop reveal">
+
+        <div class="laptop-container">
+
+          <div class="laptop" id="laptop">
+
+            <div class="laptop-screen">
+              <div class="screen-bezel">
+
+                <div class="camera"></div>
+
+                <!-- VS CODE WINDOW -->
+                <div class="code-window">
+
+                  <div class="code-topbar">
+                    <div class="window-buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+
+                    <div class="code-title">
+                      System Website.js
+                    </div>
+                  </div>
+
+                  <div class="code-body">
+
+                    <div class="code-sidebar">
+                      <div>EX</div>
+                      <div>▣</div>
+                      <div>⌕</div>
+                      <div>⑂</div>
+                    </div>
+
+                    <div class="code-editor">
+
+                      <div class="code-tabs">
+                        <span class="active-tab">
+                          Website.js
+                        </span>
+                      </div>
+
+                      <div class="code-lines" id="codeLines"></div>
+
+                      <div class="code-cursor"></div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="code-statusbar">
+                    <span>main</span>
+                    <span>Ln 12, Col 18</span>
+                    <span>JavaScript</span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- LAPTOP BASE -->
+            <div class="laptop-base">
+              <div class="keyboard">
+
+                <div class="keyboard-row">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+
+                <div class="keyboard-row">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+
+                <div class="keyboard-row">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i>
+                </div>
+
+                <div class="keyboard-row">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i>
+                </div>
+
+                <div class="trackpad"></div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="laptop-shadow"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT: ABOUT CONTENT -->
+      <div class="about-content reveal">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            About Me
+          </div>
+
+          <h2>
+            Turning ideas into useful digital experiences.
+          </h2>
+
+          <p>
+            I’m Alfred Yude, a Web Developer and SEO Specialist
+            passionate about creating modern digital experiences.
+            With a background in Information Technology, I combine
+            development, SEO, and problem-solving to build websites
+            that are both visually polished and technically effective.
+          </p>
+
+          <p>
+            From responsive websites and custom web systems to SEO
+            optimization and performance improvements, I focus on
+            turning ideas into practical solutions that help businesses
+            establish and grow their online presence.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ABOUT CARDS -->
+    <div class="cards about-cards">
+
+      <article class="card reveal">
+          <div class="icon">
+    <img src="img/code.png" alt="Website Development">
+  </div>
+        <h3>Website Development</h3>
+        <p>
+       I have experience in front-end and back-end development, including custom-coded websites and WordPress. I work with HTML, CSS, JavaScript, PHP, MySQL, and Elementor to build responsive and functional websites.
+        </p>
+      </article>
+
+      <article class="card reveal">
+           <div class="icon">
+    <img src="img/seo.png" alt="Website Development">
+  </div>
+        <h3>Search Engine Optimization Specialist</h3>
+        <p>
+       I have experience in On-Page, Off-Page, and Technical SEO, including keyword research, content optimization, link building, site audits, technical improvements to improve search visibility and organic traffic.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">✦</div>
+        <h3>Problem Solving</h3>
+        <p>
+        I have experience troubleshooting and resolving technical issues, from website bugs and coding errors to database, hosting. I focus on finding practical and improving systems for better performance.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+  <section class="dark-section" id="skills">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">Skills</div><h2>Tools I use to build and optimize.</h2></div>
+     <p>I work with a versatile set of tools and technologies to build, optimize, and enhance digital experiences. From developing responsive websites and managing WordPress projects to improving search visibility through SEO and analytics, I use the right tools to turn ideas into functional, user-focused, and results-driven solutions.</p>
+     <br><br>
+     
+     <div class="cards">
+
+  <!-- WEB DEVELOPMENT -->
+  <article class="card reveal">
+    <h3>Web Development</h3>
+
+    <div class="skill-icons">
+
+      <div class="skill-icon" data-tooltip="HTML">
+        <img src="img/wd1.png" alt="HTML">
+      </div>
+
+      <div class="skill-icon" data-tooltip="CSS">
+        <img src="img/wd2.png" alt="CSS">
+      </div>
+
+      <div class="skill-icon" data-tooltip="JavaScript">
+        <img src="img/wd3.png" alt="JavaScript">
+      </div>
+
+      <div class="skill-icon" data-tooltip="PHP">
+        <img src="img/wd4.png" alt="PHP">
+      </div>
+
+      <div class="skill-icon" data-tooltip="MySQL">
+        <img src="img/wd5.png" alt="MySQL">
+      </div>
+
+      <div class="skill-icon" data-tooltip="WordPress">
+        <img src="img/wd6.png" alt="WordPress">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Elementor">
+        <img src="img/wd7.png" alt="Elementor">
+      </div>
+
+    </div>
+  </article>
+
+
+  <!-- SEO & ANALYTICS -->
+  <article class="card reveal">
+    <h3>SEO &amp; Analytics</h3>
+
+    <div class="skill-icons">
+
+      <div class="skill-icon" data-tooltip="Semrush">
+        <img src="img/sa1.png" alt="Semrush">
+      </div>
+
+       <div class="skill-icon" data-tooltip="Ahrefs">
+        <img src="img/sa5.png" alt="Technical SEO">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Google Analytics">
+        <img src="img/sa2.png" alt="Google Analytics">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Google Search Console">
+        <img src="img/sa3.png" alt="Google Search Console">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Rank Math">
+        <img src="img/sa4.png" alt="Rank Math">
+      </div>
+
+     
+
+    </div>
+  </article>
+
+
+  <!-- DESIGN & MEDIA -->
+  <article class="card reveal">
+    <h3>Design &amp; Media</h3>
+
+    <div class="skill-icons">
+
+      <div class="skill-icon" data-tooltip="Figma">
+        <img src="img/dm1.png" alt="Figma">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Canva">
+        <img src="img/dm2.png" alt="Canva">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Adobe Photoshop">
+        <img src="img/dm3.png" alt="Adobe Photoshop">
+      </div>
+
+      <div class="skill-icon" data-tooltip="CapCut">
+        <img src="img/dm4.png" alt="CapCut">
+      </div>
+
+      <div class="skill-icon" data-tooltip="Adobe Premiere Pro">
+        <img src="img/dm5.png" alt="Adobe Premiere Pro">
+      </div>
+
+    </div>
+  </article>
+
+</div>
+    </div>
+  </section>
+
+  
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Selected Work</div>
+      <h2>Projects and systems.</h2>
+      <p>
+        A showcase of websites and systems I've built and contributed to —
+        from investor platforms and business websites to custom digital solutions.
+      </p>
+    </div>
+
+    <div class="project-showcase">
+
+      <!-- EXOBEN -->
+      <article class="project-card reveal">
+        <div class="project-image">
+          <img src="img/exoben.png" alt="Exoben Investor Portal screenshot">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Web Application</div>
+          <h3>Exoben Investor Portal</h3>
+          <p>
+            Investor platform with registration, investment workflows, payments,
+            investor dashboards, documents, support, and administrative tools.
+          </p>
+          <div class="project-tech">
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>JavaScript</span>
+            <span>Stripe</span>
+            <span>Crypto Payments</span>
+          </div>
+          <div class="project-actions">
+            <button class="project-btn" type="button"
+              onclick="openExobenModal()">
+              View Project
+              <img src="img/arrow-right.png" alt="">
+            </button>
+          </div>
+        </div>
+      </article>
+
+         <article class="project-card reveal">
+        <div class="project-image">
+          <img src="img/Sunrise.png" alt="Eastworld Sales Philippines website screenshot">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Business Website</div>
+          <h3>Sunrise Health Check </h3>
+          <p>
+            Hospitality-focused business website with product presentation,
+            services, inquiry workflows, content structure, and SEO optimization.
+          </p>
+          <div class="project-tech">
+            <span>WordPress</span>
+            <span>Elementor</span>
+            <span>SEO</span>
+            <span>Analytics</span>
+          </div>
+          <div class="project-actions">
+           <a class="project-btn" href="https://sunrisediagnostic.com.ph/" target="_blank" rel="noopener">
+  View Project
+  <img src="img/arrow-right.png" alt="">
+</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- MAZY'S -->
+    
+
+      <!-- EASTWORLD -->
+      <article class="project-card reveal">
+        <div class="project-image">
+          <img src="img/eastworldsales.png" alt="Eastworld Sales Philippines website screenshot">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Business Website</div>
+          <h3>Eastworld Sales Philippines</h3>
+          <p>
+            Hospitality-focused business website with product presentation,
+            services, inquiry workflows, content structure, and SEO optimization.
+          </p>
+          <div class="project-tech">
+            <span>WordPress</span>
+            <span>Elementor</span>
+            <span>SEO</span>
+            <span>Analytics</span>
+          </div>
+          <div class="project-actions">
+           <a class="project-btn" href="https://eastworldsales.com/" target="_blank" rel="noopener">
+  View Project
+  <img src="img/arrow-right.png" alt="">
+</a>
+          </div>
+        </div>
+      </article>
+
+      
+
+         <article class="project-card reveal">
+        <div class="project-image">
+          <img src="img/fudsource.png" alt="Eastworld Sales Philippines website screenshot">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Business Website</div>
+          <h3>Fudsource Corporation</h3>
+          <p>
+            Hospitality-focused business website with product presentation,
+            services, inquiry workflows, content structure, and SEO optimization.
+          </p>
+          <div class="project-tech">
+            <span>WordPress</span>
+            <span>Elementor</span>
+            <span>SEO</span>
+            <span>Analytics</span>
+          </div>
+          <div class="project-actions">
+            <a class="project-btn" href="https://fudsource.com.ph/" target="_blank" rel="noopener">
+  View Project
+  <img src="img/arrow-right.png" alt="">
+</a>
+          </div>
+        </div>
+      </article>
+
+        <article class="project-card reveal">
+        <div class="project-image">
+          <img src="img/mazys.png" alt="Mazy's Marketing Corporation website screenshot">
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Corporate Website</div>
+          <h3>Mazy's Marketing Corp.</h3>
+          <p>
+            Business website presenting products, company information, career
+            opportunities, contact details, and a structured content experience.
+          </p>
+          <div class="project-tech">
+            <span>WordPress</span>
+            <span>Elementor</span>
+            <span>SEO</span>
+            <span>Responsive Design</span>
+          </div>
+          <div class="project-actions">
+           <a class="project-btn" href="https://mazysmarketing.com/" target="_blank" rel="noopener">
+  View Project
+  <img src="img/arrow-right.png" alt="">
+</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- NEXT PROJECT -->
+      <article class="project-card project-more reveal">
+        <div class="project-more-inner">
+          <div class="project-more-icon">＋</div>
+          <div class="project-tag">More Projects</div>
+          <h3>More work coming soon.</h3>
+          <p>
+            More websites, systems, SEO projects, and digital solutions will be
+            added here as the portfolio grows.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="services" class="dark-section">
+    <div class="container">
+
+      <div class="services-header">
+        <div class="section-head reveal">
+          <div class="kicker">Services</div>
+          <h2>What I can help you build.</h2>
+          <p>Turning ideas into functional, modern, and scalable websites.</p>
+        </div>
+
+        <a class="services-view-all" href="#contact">
+          <span>View all services</span>
+          <span class="service-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- WEBSITE DEVELOPMENT -->
+        <article class="service-card reveal">
+          <div class="service-number">01</div>
+
+          <div class="service-icon">
+            <img src="img/code.png" alt="Website Development">
+          </div>
+
+          <h3>Website Development</h3>
+          <p>Custom websites and web systems built for your business goals, with modern design, functionality, and performance.</p>
+
+          <div class="service-divider"></div>
+
+          <ul class="service-list">
+            <li><span class="service-check">✓</span><span>Business, Corporate &amp; Portfolio Websites</span></li>
+            <li><span class="service-check">✓</span><span>E-commerce &amp; Landing Pages</span></li>
+            <li><span class="service-check">✓</span><span>Booking, Customer &amp; Investor Portals</span></li>
+            <li><span class="service-check">✓</span><span>Admin Dashboards &amp; Membership Websites</span></li>
+            <li><span class="service-check">✓</span><span>Payment Integration &amp; API Integration</span></li>
+            <li><span class="service-check">✓</span><span>Database-Driven Systems &amp; Authentication</span></li>
+            <li><span class="service-check">✓</span><span>Responsive &amp; SEO-Friendly Websites</span></li>
+            <li><span class="service-check">✓</span><span>Website Maintenance &amp; Support</span></li>
+          </ul>
+
+          <a class="service-learn" href="#contact">
+            <span>Learn more</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </article>
+
+        <!-- WORDPRESS DEVELOPMENT -->
+        <article class="service-card reveal">
+          <div class="service-number">02</div>
+
+          <div class="service-icon">
+            <img src="img/wd6.png" alt="WordPress Development">
+          </div>
+
+          <h3>WordPress Development</h3>
+          <p>Professional WordPress websites using Elementor, custom layouts, and optimized for speed and SEO.</p>
+
+          <div class="service-divider"></div>
+
+          <ul class="service-list">
+            <li><span class="service-check">✓</span><span>Custom WordPress Websites</span></li>
+            <li><span class="service-check">✓</span><span>Elementor Page Builds</span></li>
+            <li><span class="service-check">✓</span><span>Business &amp; E-commerce Websites</span></li>
+            <li><span class="service-check">✓</span><span>Theme &amp; Plugin Configuration</span></li>
+            <li><span class="service-check">✓</span><span>Performance Optimization</span></li>
+            <li><span class="service-check">✓</span><span>Website Redesigns</span></li>
+            <li><span class="service-check">✓</span><span>Security Improvements</span></li>
+            <li><span class="service-check">✓</span><span>Ongoing Maintenance &amp; Support</span></li>
+          </ul>
+
+          <a class="service-learn" href="#contact">
+            <span>Learn more</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </article>
+
+        <!-- SEO OPTIMIZATION -->
+        <article class="service-card reveal">
+          <div class="service-number">03</div>
+
+          <div class="service-icon">
+            <img src="img/seo.png" alt="SEO Optimization">
+          </div>
+
+          <h3>SEO Optimization</h3>
+          <p>Data-driven SEO strategies to help your website rank higher, get more traffic, and reach the right audience.</p>
+
+          <div class="service-divider"></div>
+
+          <ul class="service-list">
+            <li><span class="service-check">✓</span><span>Technical SEO Audits</span></li>
+            <li><span class="service-check">✓</span><span>Keyword Research &amp; Strategy</span></li>
+            <li><span class="service-check">✓</span><span>On-Page Optimization</span></li>
+            <li><span class="service-check">✓</span><span>Content Optimization</span></li>
+            <li><span class="service-check">✓</span><span>Google Analytics &amp; Search Console Setup</span></li>
+            <li><span class="service-check">✓</span><span>Semrush &amp; Rank Math Optimization</span></li>
+            <li><span class="service-check">✓</span><span>Local SEO</span></li>
+            <li><span class="service-check">✓</span><span>SEO Strategy &amp; Reporting</span></li>
+          </ul>
+
+          <a class="service-learn" href="#contact">
+            <span>Learn more</span>
+            <span class="service-arrow">→</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact reveal">
+        <div><div class="kicker">Contact</div><h2>Have a project in mind?</h2><p>Let's discuss your website, SEO, or web application requirements.</p></div>
+     <a class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=alfredyude.freelance@gmail.com" target="_blank">
+    <span>Start a Conversation →</span>
+</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer><div class="container">© 2026 Alfred Yude. All rights reserved.</div></footer>
+
+  <script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const menu=document.querySelector('.menu');
+  menu.addEventListener('click',()=>nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  const laptop = document.getElementById("laptop");
+const laptopContainer = document.querySelector(".laptop-container");
+
+laptopContainer.addEventListener("mousemove", function(e){
+
+  const rect = laptopContainer.getBoundingClientRect();
+
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+
+  const rotateY = ((x - centerX) / centerX) * 12;
+  const rotateX = ((centerY - y) / centerY) * 8;
+
+  laptop.style.transform =
+    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+});
+
+laptopContainer.addEventListener("mouseleave", function(){
+
+  laptop.style.transform =
+    "rotateX(0deg) rotateY(0deg)";
+
+});
+
+/* ================================
+   VS CODE TYPING ANIMATION
+================================ */
+
+const codeLines = document.getElementById("codeLines");
+
+const codeText = [
+  `<span class="code-keyword">const</span> <span class="code-variable">developer</span> = {`,
+  `  <span class="code-property">name</span>: <span class="code-string">"Alfred Yude"</span>,`,
+  `  <span class="code-property">role</span>: <span class="code-string">"Web Developer"</span>,`,
+  `  <span class="code-property">specialty</span>: <span class="code-string">"SEO Specialist"</span>,`,
+  `  <span class="code-property">skills</span>: [`,
+  `    <span class="code-string">"HTML"</span>,`,
+  `    <span class="code-string">"CSS"</span>,`,
+  `    <span class="code-string">"JavaScript"</span>,`,
+  `    <span class="code-string">"PHP"</span>,`,
+  `    <span class="code-string">"MySQL"</span>`,
+  `  ],`,
+  `  <span class="code-function">build</span>() {`,
+  `    <span class="code-keyword">return</span> <span class="code-string">"digital experiences"</span>;`,
+  `  }`,
+  `};`
+];
+
+let currentLine = 0;
+let currentChar = 0;
+
+function typeCode(){
+
+  if(currentLine >= codeText.length){
+
+    setTimeout(() => {
+
+      codeLines.innerHTML = "";
+      currentLine = 0;
+      currentChar = 0;
+
+      typeCode();
+
+    }, 2500);
+
+    return;
+  }
+
+  let line = codeText[currentLine];
+
+  /*
+    We type the visible text while keeping
+    the syntax highlighting after the line
+    has been completed.
+  */
+
+  if(currentChar <= stripHTML(line).length){
+
+    const visibleText = stripHTML(line).substring(
+      0,
+      currentChar
+    );
+
+    codeLines.innerHTML +=
+      `<span class="code-line">
+        <span class="line-number">${currentLine + 1}</span>
+        ${escapeHTML(visibleText)}
+      </span>`;
+
+    currentChar++;
+
+    setTimeout(typeCode, 35);
+
+  }else{
+
+    /*
+      Replace the plain line with the
+      syntax-highlighted version.
+    */
+
+    const lines =
+      codeLines.querySelectorAll(".code-line");
+
+    const lastLine =
+      lines[lines.length - 1];
+
+    lastLine.innerHTML =
+      `<span class="line-number">${currentLine + 1}</span>
+       ${line}`;
+
+    currentLine++;
+    currentChar = 0;
+
+    setTimeout(typeCode, 180);
+  }
+}
+
+function stripHTML(html){
+
+  const div = document.createElement("div");
+
+  div.innerHTML = html;
+
+  return div.textContent || div.innerText || "";
+}
+
+function escapeHTML(text){
+
+  return text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+}
+
+typeCode();
+  
+const exobenGallery = [
+  {
+    src: "img/exoben.png",
+    alt: "Exoben Investor Portal — main screen"
+  },
+  {
+    src: "img/exoben2.png",
+    alt: "Exoben Investor Portal — website preview"
+  },
+  {
+     src: "img/exoben3.png",
+    alt: "Exoben Investor Portal — dashboard"
+  },
+  {
+      src: "img/exoben4.png",
+    alt: "Exoben Investor Portal — investment workflow"
+  },
+  {
+    src: "img/exoben5.png",
+    alt: "Exoben Investor Portal — payment screen"
+  },
+  {
+      src: "img/exoben6.png",
+    alt: "Exoben Investor Portal — screen 6"
+  },
+  {
+    src: "img/exoben7.png",
+    alt: "Exoben Investor Portal — screen 7"
+  },
+  {
+     src: "img/exoben8.png",
+    alt: "Exoben Investor Portal — screen 8"
+  }
+  ,
+  {
+     src: "img/exoben9.png",
+    alt: "Exoben Investor Portal — screen 9"
+  }
+];
+
+let exobenCurrent = 0;
+
+function openExobenModal(){
+  const modal = document.getElementById("projectModal");
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  document.body.style.overflow = "hidden";
+  renderExobenGallery(0);
+}
+
+function closeProjectModal(){
+  const modal = document.getElementById("projectModal");
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
+}
+
+function renderExobenGallery(index){
+  exobenCurrent = (index + exobenGallery.length) % exobenGallery.length;
+
+  const main = document.getElementById("exobenMainImage");
+  main.src = exobenGallery[exobenCurrent].src;
+  main.alt = exobenGallery[exobenCurrent].alt;
+
+  document.querySelectorAll(".exoben-thumb").forEach((thumb,i)=>{
+    thumb.classList.toggle("active", i === exobenCurrent);
+  });
+}
+
+function moveExobenGallery(direction){
+  renderExobenGallery(exobenCurrent + direction);
+}
+
+document.getElementById("projectModal").addEventListener("click", function(e){
+  if(e.target === this) closeProjectModal();
+});
+
+document.addEventListener("keydown", function(e){
+  const modal = document.getElementById("projectModal");
+  if(!modal.classList.contains("open")) return;
+
+  if(e.key === "Escape") closeProjectModal();
+  if(e.key === "ArrowLeft") moveExobenGallery(-1);
+  if(e.key === "ArrowRight") moveExobenGallery(1);
+});
+
+</script>
+
+
+  
+<!-- EXOBEN PROJECT DETAIL MODAL -->
+<div class="project-modal" id="projectModal" aria-hidden="true">
+  <div class="project-modal-box">
+
+    <button class="project-modal-close" type="button"
+      aria-label="Close project details" onclick="closeProjectModal()">×</button>
+
+    <div class="exoben-modal-content">
+
+      <div class="exoben-modal-header">
+        <div class="exoben-modal-tag">Web Application</div>
+        <h2>Exoben Investor Portal</h2>
+        <p>
+          A custom investor platform designed to manage investor registration,
+          investment workflows, payments, verification, documents, support,
+          and administrative operations in one centralized system.
+        </p>
+      </div>
+
+      <div class="exoben-details">
+
+        <div class="exoben-panel">
+          <h3>Features &amp; Functionality</h3>
+          <ul class="exoben-features">
+            <li><span class="exoben-check">✓</span>Investor registration and account management</li>
+            <li><span class="exoben-check">✓</span>Regulation D and Regulation S investor workflows</li>
+            <li><span class="exoben-check">✓</span>Investment summary and share calculations</li>
+            <li><span class="exoben-check">✓</span>Stripe card payment integration</li>
+            <li><span class="exoben-check">✓</span>Bank transfer / ACH payment workflow</li>
+            <li><span class="exoben-check">✓</span>Cryptocurrency payment integration</li>
+            <li><span class="exoben-check">✓</span>Investor dashboard and account status</li>
+            <li><span class="exoben-check">✓</span>KYC / investor verification workflow</li>
+            <li><span class="exoben-check">✓</span>Document management and subscription agreements</li>
+            <li><span class="exoben-check">✓</span>E-signature workflow and confirmation</li>
+            <li><span class="exoben-check">✓</span>Support ticketing system</li>
+            <li><span class="exoben-check">✓</span>Admin dashboard and investor management</li>
+            <li><span class="exoben-check">✓</span>Payment tracking and transaction records</li>
+            <li><span class="exoben-check">✓</span>Cap table and share management</li>
+            <li><span class="exoben-check">✓</span>Certificate generation and QR code support</li>
+            <li><span class="exoben-check">✓</span>Agent Portal for referrals</li>
+          </ul>
+        </div>
+
+        <div class="exoben-panel">
+          <h3>Technology &amp; Integrations</h3>
+          <div class="exoben-stack">
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Stripe</span>
+            <span>Crypto Payments</span>
+            <span>NowPayments</span>
+            <span>API Integration</span>
+            <span>PDF Generation</span>
+            <span>QR Codes</span>
+          </div>
+
+          <div class="service-divider"></div>
+
+          <br>
+
+          <h3>Development Areas</h3>
+          <ul class="exoben-features" style="grid-template-columns:1fr">
+            <li><span class="exoben-check">✓</span>Frontend interface and responsive layouts</li>
+            <li><span class="exoben-check">✓</span>Backend business logic and database workflows</li>
+            <li><span class="exoben-check">✓</span>Payment and webhook handling</li>
+            <li><span class="exoben-check">✓</span>Admin and investor portal functionality</li>
+            <li><span class="exoben-check">✓</span>Document, verification, and reporting workflows</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="exoben-gallery">
+        <img id="exobenMainImage" class="exoben-main-image"
+          src="img/projects/exoben.png" alt="Exoben Investor Portal">
+
+        <div class="exoben-gallery-controls">
+          <button class="exoben-gallery-arrow" type="button"
+            aria-label="Previous image" onclick="moveExobenGallery(-1)">‹</button>
+
+         <div class="exoben-thumbs" id="exobenThumbs">
+
+  <button class="exoben-thumb active" type="button"
+    onclick="renderExobenGallery(0)">
+    <img src="img/exoben.png" alt="Exoben main preview">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(1)">
+    <img src="img/exoben2.png" alt="Exoben website preview">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(2)">
+    <img src="img/exoben3.png" alt="Exoben dashboard">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(3)">
+    <img src="img/exoben4.png" alt="Exoben investment workflow">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(4)">
+    <img src="img/exoben5.png" alt="Exoben payment screen">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(5)">
+    <img src="img/exoben6.png" alt="Exoben screen 6">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(6)">
+    <img src="img/exoben7.png" alt="Exoben screen 7">
+  </button>
+
+  <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(7)">
+    <img src="img/exoben8.png" alt="Exoben screen 8">
+  </button>
+
+   <button class="exoben-thumb" type="button"
+    onclick="renderExobenGallery(8)">
+    <img src="img/exoben9.png" alt="Exoben screen 9">
+  </button>
+
+ 
+
+</div>
+
+          <button class="exoben-gallery-arrow" type="button"
+            aria-label="Next image" onclick="moveExobenGallery(1)">›</button>
+        </div>
+
+        <div class="exoben-gallery-note">
+          Click a thumbnail or use the arrows. You can also use ← / → on your keyboard.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+/* ================================
+   DAY / NIGHT THEME
+================================ */
+(function(){
+  const toggle = document.getElementById("themeToggle");
+  if(!toggle) return;
+
+  const body = document.body;
+  const root = document.documentElement;
+  const storageKey = "portfolio-theme";
+
+  function isLight(){
+    return body.classList.contains("light") || root.classList.contains("light-mode");
+  }
+
+  function syncToggle(){
+    const light = isLight();
+    toggle.setAttribute("aria-pressed", String(light));
+    toggle.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+
+    /* Keep the body class in sync with the saved theme. */
+    if(light){
+      body.classList.add("light");
+    }else{
+      body.classList.remove("light");
+    }
+    root.classList.remove("light-mode");
+  }
+
+  syncToggle();
+
+  toggle.addEventListener("click", function(){
+    if(document.querySelector(".theme-wipe.is-running")) return;
+
+    const currentlyLight = body.classList.contains("light");
+    const targetLight = !currentlyLight;
+
+    const rect = toggle.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const radius = Math.ceil(
+      Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      ) + 40
+    );
+
+    const wipe = document.createElement("div");
+    wipe.className = "theme-wipe is-running";
+    wipe.style.setProperty("--wipe-x", x + "px");
+    wipe.style.setProperty("--wipe-y", y + "px");
+    wipe.style.setProperty("--wipe-radius", radius + "px");
+
+    /* The wipe starts as the current theme, covers the screen,
+       then switches the page and reveals the new theme. */
+    wipe.style.background = currentlyLight ? "#f4f7fb" : "#070b13";
+    document.body.appendChild(wipe);
+
+    requestAnimationFrame(function(){
+      wipe.classList.add("expand");
+    });
+
+    setTimeout(function(){
+      body.classList.toggle("light", targetLight);
+      root.classList.remove("light-mode");
+
+      try{
+        localStorage.setItem(storageKey, targetLight ? "light" : "dark");
+      }catch(e){}
+
+      syncToggle();
+
+      wipe.style.background = targetLight ? "#f4f7fb" : "#070b13";
+      wipe.classList.remove("expand");
+      wipe.classList.add("shrink");
+
+      setTimeout(function(){
+        wipe.remove();
+      }, 430);
+    }, 390);
+  });
+
+  /* If the page is loaded from another saved-tab state, keep the
+     toggle and theme synchronized. */
+  window.addEventListener("storage", function(e){
+    if(e.key !== storageKey) return;
+    const light = e.newValue === "light";
+    body.classList.toggle("light", light);
+    root.classList.remove("light-mode");
+    syncToggle();
+  });
+})();
+</script>
+
+</body>
+  </html>
