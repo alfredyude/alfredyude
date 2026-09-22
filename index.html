@@ -26,11 +26,21 @@
     border-bottom:1px solid transparent;transition:.25s;
   }
   .nav.scrolled{border-color:var(--line)}
-  .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
+  .nav-inner{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+}
   .logo{
     display:flex;
     align-items:center;
     text-decoration:none;
+  }
+
+  .logo{
+    position:relative;
   }
 
   .logo img{
@@ -38,8 +48,37 @@
     height:auto;
     display:block;
     object-fit:contain;
+  }
+
+  /* Dark theme logo */
+  .logo-dark{
+    display:block;
+  }
+
+  /* Light theme logo */
+  .logo-light{
+    display:none !important;
+  }
+
+  body.light .logo-dark,
+  html.light-mode body .logo-dark{
+    display:none !important;
+  }
+
+  body.light .logo-light,
+  html.light-mode body .logo-light{
+    display:block !important;
   } 
-  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  gap:34px;
+  align-items:center;
+  white-space:nowrap;
+}
   .nav-links a{color:#cbd3e1;font-size:14px;font-weight:600;transition:.2s}
   .nav-links a:hover,.nav-links a.active{color:#fff}
   .nav-links a.active{position:relative}
@@ -447,7 +486,19 @@
 
   @media(max-width:900px){
     .nav-links,.nav-actions{display:none}.menu{display:block}
-    .nav.open .nav-links{display:flex;position:absolute;left:0;right:0;top:78px;padding:20px;background:rgba(7,11,19,.97);flex-direction:column;gap:20px;border-bottom:1px solid var(--line)}
+    .nav.open .nav-links{
+      display:flex;
+      position:absolute;
+      left:0;
+      right:0;
+      top:78px;
+      transform:none;
+      padding:20px;
+      background:rgba(7,11,19,.97);
+      flex-direction:column;
+      gap:20px;
+      border-bottom:1px solid var(--line);
+    }
     .hero{height:auto;min-height:0;padding-top:115px}.hero-grid{grid-template-columns:1fr}.hero-content{text-align:center;padding-bottom:20px}.eyebrow{justify-content:center}.hero-copy{margin:auto}.actions{justify-content:center}.quick{justify-content:center}.visual{min-height:540px;margin-top:15px}.profile{width:min(560px,92vw);bottom:-18px}.circle{width:420px;height:420px;right:50%;transform:translate(50%,-35%)}.note{right:7%;top:10%}.opportunity{right:50%;transform:translateX(50%);bottom:5%}
     .cards{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.contact{padding:32px;flex-direction:column;align-items:flex-start}.contact h2{font-size:32px}
   }
@@ -1809,6 +1860,77 @@ html.light-mode body .laptop-screen{
 .theme-wipe.expand{clip-path:circle(var(--wipe-radius) at var(--wipe-x) var(--wipe-y))}
 .theme-wipe.shrink{clip-path:circle(0 at var(--wipe-x) var(--wipe-y))}
 
+/* =========================================
+   LIGHT THEME - ICON VISIBILITY FIX
+   ========================================= */
+
+/* Hero button icons */
+body.light .btn-icon img,
+html.light-mode body .btn-icon img {
+  filter: brightness(0) saturate(100%)
+          invert(14%) sepia(20%)
+          saturate(1200%)
+          hue-rotate(180deg)
+          brightness(92%)
+          contrast(96%);
+}
+
+/* View My Work arrow */
+body.light .button-arrow,
+html.light-mode body .button-arrow {
+  filter: brightness(0) saturate(100%)
+          invert(14%) sepia(20%)
+          saturate(1200%)
+          hue-rotate(180deg)
+          brightness(92%)
+          contrast(96%);
+}
+
+/* Let's Talk arrow */
+body.light .talk img,
+html.light-mode body .talk img {
+  filter: brightness(0) saturate(100%)
+          invert(14%) sepia(20%)
+          saturate(1200%)
+          hue-rotate(180deg)
+          brightness(92%)
+          contrast(96%);
+}
+
+/* Social media icons */
+body.light .social-links img,
+html.light-mode body .social-links img {
+  filter: brightness(0) saturate(100%)
+          invert(14%) sepia(20%)
+          saturate(1200%)
+          hue-rotate(180deg)
+          brightness(92%)
+          contrast(96%);
+}
+
+/* Make social circles cleaner in light mode */
+body.light .social-links a,
+html.light-mode body .social-links a {
+  background: #e8f1fa;
+  border: 1px solid rgba(15,31,51,.12);
+}
+
+/* White icons become blue again when hovering */
+body.light .social-links a:hover img,
+html.light-mode body .social-links a:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Keep the quick-info icons blue */
+body.light .quick-item img,
+html.light-mode body .quick-item img {
+  filter: none;
+}
+
+/* Keep the theme switch icons untouched */
+.theme-icon img {
+  filter: none !important;
+}
 </style>
   <script>
 try{
@@ -1821,8 +1943,9 @@ try{
   <body>
   <header class="nav" id="nav">
     <div class="container nav-inner">
-    <a class="logo" href="#home">
-    <img src="img/peng-logo-1.png" alt="Peng.">
+    <a class="logo" href="#home" aria-label="Alfred Yude Home">
+    <img class="logo-dark" src="img/peng-logo-1.png" alt="Peng.">
+    <img class="logo-light" src="img/peng-logo-dark.png" alt="Peng.">
   </a>
       <nav class="nav-links">
         <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
